@@ -1,4 +1,4 @@
-# omnifood-react
+# qq-music-react
 
 qq-music-react is created by react.js
 
