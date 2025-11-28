@@ -8,5 +8,11 @@ export default defineConfig({
     alias:{
       "@":path.resolve(__dirname,'./src')
     }
-  }
+  },
+    css: {
+        modules: {
+            // 启用驼峰转换
+            localsConvention: 'camelCaseOnly' // 或 'camelCase'
+        }
+    }
 })

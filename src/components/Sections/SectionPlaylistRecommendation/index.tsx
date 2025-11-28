@@ -1,12 +1,88 @@
-import "./local.scss";
+import s from "./local.module.scss";
+import FigureBox from "./FigureBox";
+import {useRef} from "react";
 
 const SectionPlaylistRecommendation = () => {
+    const imgBoxSub1 = useRef<HTMLDivElement>(null);
+
+    let len = 820;
+    let childNum = 5;
+    let moveLen= 0;
+    let maxPage = childNum-1;
+    let curPage = 0;
+
+    const getLen = () =>{
+        const sub = imgBoxSub1.current;
+        const computedStyle = window.getComputedStyle(sub);
+        //获得gap
+        const gap = parseInt(computedStyle.gap, 10);
+        //获得子元素宽度
+        const chirdWidth = sub.children[0].offsetWidth;
+        //获得len
+        len = chirdWidth * childNum + gap * childNum;
+        console.log('gap:', gap);
+        console.log('len:', len);
+    }
+
+    const rightBtnClick = ()=>{
+
+        getLen();
+        const dots = document.querySelector(".dots");
+        dots.children[curPage].classList.remove("dot-select");
+        if(curPage === maxPage){
+            curPage = 0
+        } else {
+            curPage += 1;
+        }
+        moveLen = curPage* (-len);
+        dots.children[curPage].classList.add("dot-select");
+        const sub1 = imgBoxSub1.current;
+        sub1.style.transform = `translate(${moveLen}px, 0)`;
+
+        console.log(curPage);
+    }
+
+    const leftBtnClick = ()=>{
+        const dots = document.querySelector(".dots");
+        dots.children[curPage].classList.remove("dot-select");
+        if(curPage === 0){
+            curPage = maxPage;
+        }
+        else {
+            curPage -= 1;
+        }
+        moveLen = curPage* (-len);
+        dots.children[curPage].classList.add("dot-select");
+        const sub1 = imgBoxSub1.current;
+        sub1.style.transform = `translate(${moveLen}px, 0)`;
+
+        console.log(curPage);
+    }
+
+    const dotClick = (event)=>{
+        /*取消原来选中*/
+        const child = document.querySelector('.dot-select');
+        child.classList.remove("dot-select");
+
+        /*当前点击按钮获得选中*/
+        event.currentTarget.classList.add("dot-select");
+        const parent = document.querySelector('.dots');
+        const index = Array.from(parent.children).indexOf(event.currentTarget);
+
+        /*计算curPage和移动距离*/
+        curPage = index;
+        moveLen = curPage* (-len);
+
+        const sub1 = imgBoxSub1.current;
+        sub1.style.transform = `translate(${moveLen}px, 0)`;
+    }
+
   return (
-    <section className="section-playlist-recommendation">
-      <button className="left-btn">
+    <section  className={s.sectionPlaylistRecommendation}>
+      <button className={s.leftBtn} onClick={leftBtnClick}>
         <ion-icon class="left-icon" name="chevron-back-outline"></ion-icon>
       </button>
-      <button className="right-btn">
+      <button className={s.rightBtn} onClick={rightBtnClick}>
         <ion-icon class="right-icon" name="chevron-forward-outline"></ion-icon>
       </button>
       <h1>歌单推荐</h1>
@@ -30,69 +106,45 @@ const SectionPlaylistRecommendation = () => {
           情歌
         </a>
       </div>
-      <div className="img-box">
-        <figure>
-          <div className="img-container">
-            <img
-              className="section-playlist-img"
-              alt="song"
-              src="img/carousel/1.webp"
-            />
+      <div className={s.imgBox}>
+          <div ref={imgBoxSub1} className={s.imgBoxSub1}>
+              <FigureBox imgSrc="img/carousel/1.webp" playName="抖音热歌丨潮流旋律感觉至上" playTimes="8.5亿"/>
+              <FigureBox imgSrc="img/carousel/2.webp" playName="抖音热门精选：浅听亿点点的心动" playTimes="7089.9万"/>
+              <FigureBox imgSrc="img/carousel/3.webp" playName="聚会必唱|全网精选热歌,单曲循环" playTimes="2.9万"/>
+              <FigureBox imgSrc="img/carousel/4.webp" playName="伤感华语：不曾想词曲能如此心酸" playTimes="803.4万"/>
+              <FigureBox imgSrc="img/carousel/5.webp" playName="500首抖音热歌：包你一次听个够" playTimes="4.1亿"/>
+
+              <FigureBox imgSrc="img/carousel/6.webp" playName="抖音DJ 集丨一脚油门200迈" playTimes="1016.3万"/>
+              <FigureBox imgSrc="img/carousel/7.webp" playName="抖音DJ 集丨一脚油门200迈" playTimes="1016.3万"/>
+              <FigureBox imgSrc="img/carousel/8.webp" playName="抖音DJ 集丨一脚油门200迈" playTimes="1016.3万"/>
+              <FigureBox imgSrc="img/carousel/9.webp" playName="抖音DJ 集丨一脚油门200迈" playTimes="1016.3万"/>
+              <FigureBox imgSrc="img/carousel/10.webp" playName="抖音DJ 集丨一脚油门200迈" playTimes="1016.3万"/>
+
+              <FigureBox imgSrc="img/carousel/10.webp" playName="抖音热歌丨潮流旋律感觉至上" playTimes="8.5亿"/>
+              <FigureBox imgSrc="img/carousel/2.webp" playName="抖音热门精选：浅听亿点点的心动" playTimes="7089.9万"/>
+              <FigureBox imgSrc="img/carousel/3.webp" playName="聚会必唱|全网精选热歌,单曲循环" playTimes="2.9万"/>
+              <FigureBox imgSrc="img/carousel/4.webp" playName="伤感华语：不曾想词曲能如此心酸" playTimes="803.4万"/>
+              <FigureBox imgSrc="img/carousel/5.webp" playName="500首抖音热歌：包你一次听个够" playTimes="4.1亿"/>
+
+              <FigureBox imgSrc="img/carousel/8.webp" playName="抖音热歌丨潮流旋律感觉至上" playTimes="8.5亿"/>
+              <FigureBox imgSrc="img/carousel/2.webp" playName="抖音热门精选：浅听亿点点的心动" playTimes="7089.9万"/>
+              <FigureBox imgSrc="img/carousel/3.webp" playName="聚会必唱|全网精选热歌,单曲循环" playTimes="2.9万"/>
+              <FigureBox imgSrc="img/carousel/4.webp" playName="伤感华语：不曾想词曲能如此心酸" playTimes="803.4万"/>
+              <FigureBox imgSrc="img/carousel/5.webp" playName="500首抖音热歌：包你一次听个够" playTimes="4.1亿"/>
+
+              <FigureBox imgSrc="img/carousel/7.webp" playName="抖音热歌丨潮流旋律感觉至上" playTimes="8.5亿"/>
+              <FigureBox imgSrc="img/carousel/2.webp" playName="抖音热门精选：浅听亿点点的心动" playTimes="7089.9万"/>
+              <FigureBox imgSrc="img/carousel/3.webp" playName="聚会必唱|全网精选热歌,单曲循环" playTimes="2.9万"/>
+              <FigureBox imgSrc="img/carousel/4.webp" playName="伤感华语：不曾想词曲能如此心酸" playTimes="803.4万"/>
+              <FigureBox imgSrc="img/carousel/5.webp" playName="500首抖音热歌：包你一次听个够" playTimes="4.1亿"/>
           </div>
-          <p className="playlist-name">抖音热歌丨潮流旋律感觉至上</p>
-          <p className="play-times">播放量：8.5亿</p>
-        </figure>
-        <figure>
-          <div className="img-container">
-            <img
-              className="section-playlist-img"
-              alt="song"
-              src="img/carousel/2.webp"
-            />
-          </div>
-          <p className="playlist-name">抖音热门精选：浅听亿点点的心动</p>
-          <p className="play-times">播放量：7089.9万</p>
-        </figure>
-        <figure>
-          <div className="img-container">
-            <img
-              className="section-playlist-img"
-              alt="song"
-              src="img/carousel/3.webp"
-            />
-          </div>
-          <p className="playlist-name">聚会必唱|全网精选热歌,单曲循环</p>
-          <p className="play-times">播放量：2.9万</p>
-        </figure>
-        <figure>
-          <div className="img-container">
-            <img
-              className="section-playlist-img"
-              alt="song"
-              src="img/carousel/4.webp"
-            />
-          </div>
-          <p className="playlist-name">伤感华语：不曾想词曲能如此心酸</p>
-          <p className="play-times">播放量：803.4万</p>
-        </figure>
-        <figure>
-          <div className="img-container">
-            <img
-              className="section-playlist-img"
-              alt="song"
-              src="img/carousel/5.webp"
-            />
-          </div>
-          <p className="playlist-name">500首抖音热歌：包你一次听个够</p>
-          <p className="play-times">播放量：4.1亿</p>
-        </figure>
 
         <div className="dots">
-          <button className="dot dot-select"></button>
-          <button className="dot"></button>
-          <button className="dot"></button>
-          <button className="dot"></button>
-          <button className="dot"></button>
+          <button className="dot dot-select" onClick={dotClick}></button>
+          <button className="dot" onClick={dotClick}></button>
+          <button className="dot" onClick={dotClick}></button>
+          <button className="dot" onClick={dotClick}></button>
+          <button className="dot" onClick={dotClick}></button>
         </div>
       </div>
     </section>

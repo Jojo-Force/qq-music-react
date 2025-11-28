@@ -6,11 +6,13 @@ import SectionMeals from '@/components/Sections/SectionMeals'
 import SectionPricing from '@/components/Sections/SectionPricing'
 import SectionTestimonials from '@/components/Sections/SectionTestimonials'
 import SectionPlaylistRecommendation from "@/components/Sections/SectionPlaylistRecommendation";
+import SectionNewSong from "../Sections/SectionNewSong";
 
 const Main =()=>{
     return (
         <main>
             <SectionPlaylistRecommendation/>
+            <SectionNewSong/>
             {/*<SectionHero/>*/}
             {/*<SectionFeatured/>*/}
             {/*<SectionHow/>*/}
