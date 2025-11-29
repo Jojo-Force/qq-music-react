@@ -1,4 +1,3 @@
-
 .section-new-song {
   background-color: #f3f3f3;
   height: 40rem;
@@ -21,27 +20,27 @@
   width: 25rem;
 }
 
-.container{
+.container {
   grid-row: 1/3;
   grid-column: 1/2;
 }
 
-.song-name{
+.song-name {
   grid-row: 1/2;
   grid-column: 2/3;
 }
 
-.singer-names{
+.singer-names {
   grid-row: 2/3;
   grid-column: 2/3;
-  white-space: nowrap;      /* 禁止换行 */
-  overflow: hidden;         /* 隐藏溢出内容 */
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
   text-overflow: ellipsis;
   color: #878787;
 }
 
-.song-time{
-  grid-row:1/3;
+.song-time {
+  grid-row: 1/3;
   grid-column: 3/4;
   align-self: center;
   font-size: 1rem;
@@ -63,17 +62,16 @@
   transition: all 0.3s;
   color: black;
 
-
-  white-space: nowrap;      /* 禁止换行 */
-  overflow: hidden;         /* 隐藏溢出内容 */
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
   text-overflow: ellipsis;
 }
 
 .song-name:active,
-.song-name:hover{
-  color: #31C27C;
-  white-space: nowrap;      /* 禁止换行 */
-  overflow: hidden;         /* 隐藏溢出内容 */
+.song-name:hover {
+  color: #31c27c;
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
   text-overflow: ellipsis;
 }
 
@@ -86,19 +84,18 @@
   text-decoration: none;
   transition: all 0.3s;
   color: #878787;
-  white-space: nowrap;      /* 禁止换行 */
-  overflow: hidden;         /* 隐藏溢出内容 */
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
   text-overflow: ellipsis;
 }
 
 .singer-name:active,
-.singer-name:hover{
-  color: #31C27C;
-  white-space: nowrap;      /* 禁止换行 */
-  overflow: hidden;         /* 隐藏溢出内容 */
+.singer-name:hover {
+  color: #31c27c;
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
   text-overflow: ellipsis;
 }
-
 
 .img-container {
   overflow: hidden;
@@ -138,7 +135,6 @@
 .img-container:hover .section-new-song-img {
   transform: scale(1.1);
 }
-
 
 .left-btn {
   border: none;
@@ -198,7 +194,7 @@
   opacity: 1;
 }
 
-.img-box-sub1{
+.img-box-sub1 {
   display: grid;
   gap: 1.4rem;
   transition: all 0.4s ease-out;
@@ -214,9 +210,17 @@
   margin-top: 1.4rem;
 }
 
-.playall-btn{
+.playall-btn {
   background-color: #f3f3f3;
-  border: 0.1rem solid #C9C9C9;
+  border: 0.1rem solid #c9c9c9;
   padding: 0.6rem 1.2rem;
   font-size: 1.2rem;
+}
+
+.second-link-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
 }

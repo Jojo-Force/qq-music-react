@@ -288,13 +288,14 @@ ion-icon {
 }
 
 .second-link-select.second-link:link,
-.second-link-select.second-link:visited,{
+.second-link-select.second-link:visited {
   color: #31c27c;
 }
 
 .second-link-flexbox {
   display: flex;
   gap: 2.4rem;
+  align-items: center;
 }
 
 h1 {
