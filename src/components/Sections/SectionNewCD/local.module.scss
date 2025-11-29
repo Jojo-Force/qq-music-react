@@ -1,0 +1,236 @@
+.section-new-cd {
+  background-color: #fafafa;
+  height: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  position: relative;
+}
+
+.figure-out {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 15rem;
+  //width: 25rem;
+}
+
+.container {
+}
+
+.song-name {
+}
+
+.singer-names {
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  text-overflow: ellipsis;
+  color: #878787;
+}
+
+.song-time {
+  align-self: center;
+  font-size: 1rem;
+  color: #878787;
+}
+
+
+.song-name:link,
+.song-name:visited {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  color: black;
+
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  text-overflow: ellipsis;
+}
+
+.song-name:active,
+.song-name:hover {
+  color: #31c27c;
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  text-overflow: ellipsis;
+}
+
+.singer-name:link,
+.singer-name:visited {
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  color: #878787;
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  text-overflow: ellipsis;
+}
+
+.singer-name:active,
+.singer-name:hover {
+  color: #31c27c;
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  text-overflow: ellipsis;
+}
+
+.img-container {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.img-container::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("svg/cover_play.png");
+  background-size: cover;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.img-container:hover::after {
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.section-new-cd-img {
+  height: 15rem;
+  transition: all 0.3s ease-out;
+}
+
+.img-container:hover .section-new-cd-img {
+  transform: scale(1.1);
+}
+
+.left-btn {
+  border: none;
+  background-color: #ececec;
+  padding: 3rem 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #e1e1e1;
+  }
+  transition: all 0.5s;
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.right-btn {
+  border: none;
+  background-color: #ececec;
+  padding: 3rem 1.5rem;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #e1e1e1;
+  }
+  transition: all 0.5s;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.left-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.right-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.section-new-cd:hover .left-btn {
+  transform: translate(0, -50%);
+  opacity: 1;
+}
+
+.section-new-cd:hover .right-btn {
+  transform: translate(0, -50%);
+  opacity: 1;
+}
+
+.img-box-sub1 {
+  display: grid;
+  gap: 1.4rem;
+  transition: all 0.4s ease-out;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: column;
+}
+
+.img-box {
+  display: flex;
+  gap: 1.4rem;
+  width: 79.2rem;
+  overflow: hidden;
+  margin-top: 1.4rem;
+}
+
+.more-icon{
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #555555;
+}
+
+.more-btn {
+  position: absolute;
+  background-color: inherit;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  right:-29rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+}
+
+.play-all-btn:hover {
+  background-color: #ededed;
+}
+.second-links-wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.play-icon{
+  color: #999999;
+  height: 3.2rem;
+  width: 3.2rem;
+}
