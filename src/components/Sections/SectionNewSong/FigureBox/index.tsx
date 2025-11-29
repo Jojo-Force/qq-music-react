@@ -10,7 +10,7 @@ interface FigureBoxProps {
 const FigureBox = ({imgSrc,songName,singerNames,songTime}:FigureBoxProps) => {
     return (
         <figure className={s.figureOut}>
-            <div className={s.container}>
+            <div className={s.imgContainer}>
                 <img
                     className={s.sectionNewSongImg}
                     alt="song"

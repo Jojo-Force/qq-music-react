@@ -1,6 +1,6 @@
 import FigureBox from "./FigureBox";
 import s from "./local.module.scss";
-import { useRef } from "react";
+import {useEffect, useRef} from "react";
 
 const imgs = [
   {
@@ -127,11 +127,13 @@ const imgs = [
 const SectionNewCD = () => {
   const section = useRef<HTMLDivElement>(null);
   const imgBoxSub1 = useRef<HTMLDivElement>(null);
+  const imgBox = useRef<HTMLDivElement>(null);
   let len = 820;
   const childNum = 5;
   let moveLen = 0;
   const maxPage = 2 - 1;
   let curPage = 0;
+
 
   const getLen = () => {
     const sub = imgBoxSub1.current;
@@ -142,12 +144,14 @@ const SectionNewCD = () => {
     const chirdWidth = sub.children[0].offsetWidth;
     //获得len
     len = chirdWidth * childNum + gap * childNum;
-    console.log("gap:", gap);
-    console.log("len:", len);
+    console.log("gap1:", gap);
+    console.log("len1:", len);
+    imgBox.current.style.width = len+"px";
   };
-
+    useEffect(() => {
+        getLen();
+    },[])
   const rightBtnClick = () => {
-    getLen();
     const dots = section.current.querySelector(".dots");
     dots.children[curPage].classList.remove("dot-select");
     if (curPage === maxPage) {
@@ -233,7 +237,7 @@ const SectionNewCD = () => {
           </a>
           </div>
       </div>
-      <div className={s.imgBox}>
+      <div ref={imgBox} className={s.imgBox}>
         <div ref={imgBoxSub1} className={s.imgBoxSub1}>
           {imgs.map((img, index) => (
             <FigureBox
