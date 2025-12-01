@@ -204,11 +204,11 @@ const SectionNewCD = () => {
   return (
     <section ref={section} className={s.sectionNewCd}>
       <button className={s.leftBtn} onClick={leftBtnClick}>
-        <ion-icon className={s.leftIcon} name="chevron-back-outline"></ion-icon>
+        <ion-icon class={s.leftIcon} name="chevron-back-outline"></ion-icon>
       </button>
       <button className={s.rightBtn} onClick={rightBtnClick}>
         <ion-icon
-          className={s.rightIcon}
+          class={s.rightIcon}
           name="chevron-forward-outline"
         ></ion-icon>
       </button>
@@ -216,7 +216,7 @@ const SectionNewCD = () => {
       <div className="second-link-flexbox">
           <div className={s.secondLinksWrapper}>
               <button className={s.moreBtn}>
-                  更多<ion-icon className={s.moreIcon} name="chevron-forward-outline"></ion-icon></button>
+                  更多<ion-icon class={s.moreIcon} name="chevron-forward-outline"></ion-icon></button>
           <a href="#" className="second-link second-link-select">
             最新
           </a>

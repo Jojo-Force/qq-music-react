@@ -125,11 +125,11 @@ const SectionRecommend = () => {
   return (
     <section ref={section} className={s.sectionRecommend}>
       <button className={s.leftBtn} onClick={leftBtnClick}>
-        <ion-icon className={s.leftIcon} name="chevron-back-outline"></ion-icon>
+        <ion-icon class={s.leftIcon} name="chevron-back-outline"></ion-icon>
       </button>
       <button className={s.rightBtn} onClick={rightBtnClick}>
         <ion-icon
-          className={s.rightIcon}
+          class={s.rightIcon}
           name="chevron-forward-outline"
         ></ion-icon>
       </button>

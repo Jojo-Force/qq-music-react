@@ -411,6 +411,10 @@
 .second-header{
   ///*second-header上方加一条分割线*/
   //border-top: 1px solid #eee;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .second-nav-list{
   list-style: none;

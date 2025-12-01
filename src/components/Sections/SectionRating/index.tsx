@@ -96,7 +96,7 @@ const SectionRating = () => {
         <div className={s.h1Box}>
       <h1>排行榜</h1>
             <button className={s.moreBtn}>
-                更多<ion-icon className={s.moreIcon} name="chevron-forward-outline"></ion-icon></button>
+                更多<ion-icon class={s.moreIcon} name="chevron-forward-outline"></ion-icon></button>
         </div>
       <div className={s.imgBox}>
 

@@ -458,11 +458,11 @@ const SectionNewSong = () => {
   return (
     <section ref={section} className={s.sectionNewSong}>
       <button className={s.leftBtn} onClick={leftBtnClick}>
-        <ion-icon className={s.leftIcon} name="chevron-back-outline"></ion-icon>
+        <ion-icon class={s.leftIcon} name="chevron-back-outline"></ion-icon>
       </button>
       <button className={s.rightBtn} onClick={rightBtnClick}>
         <ion-icon
-          className={s.rightIcon}
+          class={s.rightIcon}
           name="chevron-forward-outline"
         ></ion-icon>
       </button>
@@ -470,7 +470,7 @@ const SectionNewSong = () => {
       <div className="second-link-flexbox">
           <div className={s.secondLinksWrapper}>
               <button className={s.playAllBtn}>
-                  <ion-icon className={s.playIcon}name="play-outline"></ion-icon>
+                  <ion-icon class={s.playIcon} name="play-outline"></ion-icon>
                   播放全部</button>
           <a href="#" className="second-link second-link-select">
             最新
