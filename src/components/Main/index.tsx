@@ -3,6 +3,7 @@ import SectionNewSong from "../Sections/SectionNewSong";
 import SectionRecommend from "../Sections/SectionRecommend";
 import SectionNewCD from "../Sections/SectionNewCD";
 import SectionRating from "../Sections/SectionRating";
+import SectionMV from "../Sections/SectionMV";
 
 const Main =()=>{
     return (
@@ -12,13 +13,7 @@ const Main =()=>{
             <SectionRecommend/>
             <SectionNewCD/>
             <SectionRating/>
-            {/*<SectionHero/>*/}
-            {/*<SectionFeatured/>*/}
-            {/*<SectionHow/>*/}
-            {/*<SectionMeals/>*/}
-            {/*<SectionTestimonials/>*/}
-            {/*<SectionPricing/>*/}
-            {/*<SectionCTA/>*/}
+            <SectionMV/>
         </main>
     )
 }
