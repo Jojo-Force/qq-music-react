@@ -1,90 +1,90 @@
-import './local.scss'
+import s from './local.module.scss'
 const Header = () => {
     return (
-        <header className="header">
-        <div className="first-header">
+        <header className={s.header}>
+        <div className={s.firstHeader}>
             <a href="#">
                 <img className="logo" alt="logo" src="img/logos/logo.png"/>
             </a>
-            <nav className="main-nav">
-                <ul className="main-nav-list">
-                    <li className="main-nav-li-selected">
-                        <a href="#" className="main-nav-link main-nav-link-selected">音乐馆</a>
+            <nav className={s.mainNav}>
+                <ul className={s.mainNavList}>
+                    <li className={s.mainNavLiSelected}>
+                        <a href="#" className={s.mainNavLink + " " +s.mainNavLinkSelected}>音乐馆</a>
                     </li>
                     <li>
-                        <a href="#" className="main-nav-link">我的音乐</a>
+                        <a href="#" className={s.mainNavLink}>我的音乐</a>
                     </li>
                     <li>
-                        <a href="#" className="main-nav-link qiangtequan">客户端</a>
+                        <a href="#" className={s.mainNavLink + " " + s.qiangtequan}>客户端</a>
                     </li>
                     <li>
-                        <a href="#" className="main-nav-link">开发平台</a>
+                        <a href="#" className={s.mainNavLink}>开发平台</a>
                     </li>
                     <li>
-                        <a href="#" className="main-nav-link">VIP</a>
+                        <a href="#" className={s.mainNavLink}>VIP</a>
                     </li>
                     <li>
-                        <div className="search-box">
-                        <input className="search-input" placeholder="搜索、MV、歌单、用户"/>
-                        <button className="search-btn">
-                            <ion-icon class="search-btn-icon" name="search-outline"></ion-icon>
+                        <div className={s.searchBox}>
+                        <input className={s.searchInput} placeholder="搜索、MV、歌单、用户"/>
+                        <button className={s.searchBtn}>
+                            <ion-icon class={s.searchBtnIcon} name="search-outline"></ion-icon>
                         </button>
                         </div>
                     </li>
                     <li>
-                        <button className="login-btn">登录</button>
+                        <button className={s.loginBtn}>登录</button>
                     </li>
                     <li>
-                        <div className="menu-vip">
-                            <label className="vip-label">开通VIP
-                            <ion-icon class="vip-up-icon" name="caret-up-outline"></ion-icon>
-                            <ion-icon class="vip-down-icon" name="caret-down-outline"></ion-icon>
+                        <div className={s.menuVip}>
+                            <label className={s.vipLabel}>开通VIP
+                            <ion-icon class={s.vipUpIcon} name="caret-up-outline"></ion-icon>
+                            <ion-icon class={s.vipDownIcon} name="caret-down-outline"></ion-icon>
                             </label>
-                            <button className="vip-super-btn">开通超级会员</button>
-                            <button className="vip-best-btn">开通绿钻豪华版</button>
+                            <button className={s.vipSuperBtn}>开通超级会员</button>
+                            <button className={s.vipBestBtn}>开通绿钻豪华版</button>
                         </div>
                     </li>
                     <li>
-                        <div className="menu-charge">
-                            <label className="charge-label">充值
-                            <ion-icon class="charge-up-icon" name="caret-up-outline"></ion-icon>
-                            <ion-icon class="charge-down-icon" name="caret-down-outline"></ion-icon>
+                        <div className={s.menuCharge}>
+                            <label className={s.chargeLabel}>充值
+                            <ion-icon class={s.chargeUpIcon} name="caret-up-outline"></ion-icon>
+                            <ion-icon class={s.chargeDownIcon} name="caret-down-outline"></ion-icon>
                             </label>
-                            <button className="charge-buy-btn">购买乐币</button>
-                            <button className="charge-charge-btn">充值饭票
-                            <button className="charge-invoice-btn">开具发票</button>
+                            <button className={s.chargeBuyBtn}>购买乐币</button>
+                            <button className={s.chargeChargeBtn}>充值饭票
+                            <button className={s.chargeInvoiceBtn}>开具发票</button>
                             </button>
                         </div>
                     </li>
                 </ul>
             </nav>
         </div>
-            <hr className="header-hr"/>
-            <div className="second-header">
-                <ul className="second-nav-list">
+            <hr className={s.headerHr}/>
+            <div className={s.secondHeader}>
+                <ul className={s.secondNavList}>
                     <li>
-                        <a href="#" className="second-nav-link">首页</a>
+                        <a href="#" className={s.secondNavLink}>首页</a>
                     </li>
                     <li>
-                        <a href="#" className="second-nav-link">歌手</a>
+                        <a href="#" className={s.secondNavLink}>歌手</a>
                     </li>
                     <li>
-                        <a href="#" className="second-nav-link">新碟</a>
+                        <a href="#" className={s.secondNavLink}>新碟</a>
                     </li>
                     <li>
-                        <a href="#" className="second-nav-link">排行榜</a>
+                        <a href="#" className={s.secondNavLink}>排行榜</a>
                     </li>
                     <li>
-                        <a href="#" className="second-nav-link">分类歌单</a>
+                        <a href="#" className={s.secondNavLink}>分类歌单</a>
                     </li>
                     <li>
-                        <a href="#" className="second-nav-link">雷达</a>
+                        <a href="#" className={s.secondNavLink}>雷达</a>
                     </li>
                     <li>
-                        <a href="#" className="second-nav-link">MV</a>
+                        <a href="#" className={s.secondNavLink}>MV</a>
                     </li>
                     <li>
-                        <a href="#" className="second-nav-link">数字专辑</a>
+                        <a href="#" className={s.secondNavLink}>数字专辑</a>
                     </li>
                 </ul>
             </div>
